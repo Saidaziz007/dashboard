@@ -1,12 +1,12 @@
 import Dashboard from "@/components/dashboard/dashboard";
-import React from "react";
-import { FiMenu } from "react-icons/fi";
-import photo from "@/assets/photo.jpg";
 import Image from "next/image";
-import Product from "@/components/products/products";
+import React from "react";
+import photo from "@/assets/photo.jpg";
+import { FiMenu } from "react-icons/fi";
+import User from "@/components/users/user";
 
 async function getData() {
-  const res = await fetch("https://dummyjson.com/products");
+  const res = await fetch("https://dummyjson.com/users");
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -15,16 +15,16 @@ async function getData() {
   return res.json();
 }
 
-const Products = async () => {
+const Users = async () => {
   let data = await getData();
   return (
-    <div className="products">
+    <div className="users">
       <div className="container">
-        <div className="products-all">
-          <div className="products-left">
+        <div className="users-all">
+          <div className="users-left">
             <Dashboard />
           </div>
-          <div className="products-right">
+          <div className="users-right">
             <div className="products-right-top">
               <FiMenu />
               <div className="products-login">
@@ -33,20 +33,19 @@ const Products = async () => {
               </div>
             </div>
             <div className="products-right-title">
-              <h1>Overview</h1>
+              <h1>Tickets</h1>
               <div className="products-btns">
                 <button className="btn-1">...</button>
                 <button className="btn-2">Add</button>
               </div>
             </div>
-            <div className="products-right-titles">
-              <p>Owner</p>
-              <p>End date</p>
-              <p>Profits</p>
-              <p>Losses</p>
-              <p>Phone</p>
+            <div className="users-right-titles">
+              <p>Ticket details</p>
+              <p>Customer name</p>
+              <p>Date</p>
+              <p>Priority</p>
             </div>
-            <Product data={data} />
+            <User data={data} />
           </div>
         </div>
       </div>
@@ -54,4 +53,4 @@ const Products = async () => {
   );
 };
 
-export default Products;
+export default Users;

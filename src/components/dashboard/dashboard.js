@@ -26,7 +26,9 @@ const Dashboard = () => {
           </div>
           <div className="dashboard-top-3">
             <FaTicketAlt />
-            <p>Users</p>
+            <Link href={"/users"}>
+              <p>Users</p>
+            </Link>
           </div>
           <div className="dashboard-top-3">
             <LuLamp />
