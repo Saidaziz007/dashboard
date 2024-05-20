@@ -9,8 +9,8 @@ const Product = ({ data }) => {
         <p>{el.title}</p>
       </div>
       <p>1/15/12</p>
-      <p>${el.price}</p>
-      <p>${el.price * 2}</p>
+      <p className="green-color">${el.price}</p>
+      <p className="red-color">${el.price * 2}</p>
       <p>(603) 555-0123</p>
     </div>
   ));

@@ -212,3 +212,11 @@ span {
   border-radius: 30px;
   background-color: yellow;
 }
+
+.green-color {
+  color: rgba(16, 205, 69, 1);
+}
+
+.red-color {
+  color: rgba(228, 64, 103, 1);
+}
